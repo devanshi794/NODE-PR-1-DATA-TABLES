@@ -188,7 +188,7 @@ npm run dev
 
 ---
 
-## 🎥 Project Demonstration Video
+## 🎥 Project Explanation Video
 
 Watch the complete project explanation video here:
 
