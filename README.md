@@ -69,40 +69,6 @@ NODE-PR-1-DATA-TABLES
 
 ---
 
-## 📦 Installation
-
-### Clone Repository
-
-```bash
-git clone https://github.com/devanshi794/NODE-PR-1-DATA-TABLES.git
-```
-
-### Move into Project
-
-```bash
-cd NODE-PR-1-DATA-TABLES
-```
-
-### Install Dependencies
-
-```bash
-npm install
-```
-
-### Start Server
-
-```bash
-npm start
-```
-
-### Development Mode
-
-```bash
-npm run dev
-```
-
----
-
 ## ⚙️ Database Configuration
 
 MongoDB Connection:
