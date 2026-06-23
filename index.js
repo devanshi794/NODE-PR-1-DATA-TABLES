@@ -1,9 +1,11 @@
 import express from "express";
 import db from "./configs/database.js";
+import dotenv from "dotenv";
 import BookRoutes from "./routes/BookRoutes.js";
 import UserRoutes from "./routes/UserRoutes.js";
 
-const port = 8081;
+dotenv.config();
+
 const app = express();
 
 app.use(express.json());
@@ -16,6 +18,8 @@ app.get("/", (req, res) => {
 
 app.use("/books", BookRoutes);
 app.use("/users", UserRoutes);
+
+const port = process.env.PORT || 8081;
 
 app.listen(port, () => {
     console.log("Server start on port " + port);
