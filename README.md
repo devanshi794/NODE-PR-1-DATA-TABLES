@@ -188,6 +188,14 @@ npm run dev
 
 ---
 
+## 🎥 Project Demonstration Video
+
+Watch the complete project explanation video here:
+
+🔗 https://drive.google.com/file/d/15zfgkLGxJLR18DrGF99Y6pOv1na5BkVC/view?usp=sharing
+
+---
+
 ## 📌 Conclusion
 
 The Book Store Management API is a RESTful backend application developed using Node.js, Express.js, MongoDB, and Mongoose. The project successfully implements CRUD operations for both Books and Users while following the MVC (Model-View-Controller) architecture.
