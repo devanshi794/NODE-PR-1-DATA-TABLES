@@ -6,7 +6,7 @@ import {
   updateBook,
   deleteBook,
 } from "../controllers/BookController.js";
-
+import { bookValidator } from "../middlewares/authMiddleware.js";
 const BookRoutes = Router();
 
 BookRoutes.post("/", createBook);

@@ -7,6 +7,7 @@ import {
   updateUser,
   deleteUser,
 } from "../controllers/UserController.js";
+import { userValidator } from "../middlewares/authMiddleware.js";
 
 const UserRoutes = Router();
 

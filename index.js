@@ -6,6 +6,7 @@ import UserRoutes from "./routes/UserRoutes.js";
 
 dotenv.config();
 
+const port = 8082;
 const app = express();
 
 app.use(express.json());
@@ -19,9 +20,13 @@ app.get("/", (req, res) => {
 app.use("/books", BookRoutes);
 app.use("/users", UserRoutes);
 
-const port = process.env.PORT || 8081;
+app.listen(port, (err) => {
 
-app.listen(port, () => {
+    if (err) {
+        console.log(err);
+        return
+    }
+
     console.log("Server start on port " + port);
     console.log("http://localhost:" + port);
 });

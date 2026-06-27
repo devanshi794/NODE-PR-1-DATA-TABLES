@@ -1,30 +1,46 @@
-import User from "../models/user.model.js";
+import { body } from "express-validator";
 
-const authMiddleware = async (req, res, next) => {
-  try {
-    const { email } = req.headers;
+export const userValidator = [
+  body("name")
+    .notEmpty()
+    .withMessage("Name is required")
+    .isLength({ min: 3 })
+    .withMessage("Name must be at least 3 characters long"),
 
-    if (!email) {
-      return res.status(401).json({
-        message: "Email is required",
-      });
-    }
+  body("email")
+    .notEmpty()
+    .withMessage("Email is required")
+    .isEmail()
+    .withMessage("Invalid email format"),
 
-    const user = await User.findOne({ email });
+  body("password")
+    .notEmpty()
+    .withMessage("Password is required")
+    .isLength({ min: 6 })
+    .withMessage("Password must be at least 6 characters long"),
 
-    if (!user) {
-      return res.status(404).json({
-        message: "User not found",
-      });
-    }
 
-    req.user = user;
-    next();
-  } catch (error) {
-    return res.status(500).json({
-      message: error.message,
-    });
-  }
-};
+];
 
-export default authMiddleware;
+
+export const bookValidator = [
+  body("title")
+    .notEmpty()
+    .withMessage("Title is required")
+    .isLength({ min: 2 })
+    .withMessage("Title must be at least 2 characters long"),
+
+  body("author")
+    .notEmpty()
+    .withMessage("Author name is required")
+    .isLength({ min: 3 })
+    .withMessage("Author name must be at least 3 characters long"),
+
+  body("price")
+    .notEmpty()
+    .withMessage("Price is required")
+    .isNumeric()
+    .withMessage("Price must be a number"),
+
+
+];
